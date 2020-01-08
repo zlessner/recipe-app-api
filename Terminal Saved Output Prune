@@ -1,0 +1,1931 @@
+Last login: Mon Jan  6 17:03:44 on ttys001
+IUSA20655:~ zacharyl$ cd Desktop/Other/proj/recipe-app-api/
+IUSA20655:recipe-app-api zacharyl$ eval "$(docker-machine env default)"
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Starting recipe-app-api_db_1 ... done
+Starting recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:54:24.065 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:54:24.081 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:33:04 UTC
+db_1   | 2020-01-07 01:54:24.201 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo starts at 0/1780B10
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  invalid record length at 0/1780B48: wanted 24, got 0
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo done at 0/1780B10
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 01:54:25
+^CERROR: Aborting.
+IUSA20655:recipe-app-api zacharyl$ docker-compose --version
+docker-compose version 1.24.1, build 4667896b
+IUSA20655:recipe-app-api zacharyl$ docker-compose ps
+        Name                   Command            State           Ports         
+--------------------------------------------------------------------------------
+recipe-app-api_app_1   sh -c python manage.py     Up      0.0.0.0:8000->8000/tcp
+                       wai ...                                                  
+recipe-app-api_db_1    docker-entrypoint.sh       Up      5432/tcp              
+                       postgres                                                 
+IUSA20655:recipe-app-api zacharyl$ docker-compose up -d
+recipe-app-api_db_1 is up-to-date
+recipe-app-api_app_1 is up-to-date
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+recipe-app-api_db_1 is up-to-date
+recipe-app-api_app_1 is up-to-date
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 01:33:05
+app_1  | Django version 2.1.15, using settings 'app.settings'
+app_1  | Starting development server at http://0.0.0.0:8000/
+app_1  | Quit the server with CONTROL-C.
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 01:54:25
+app_1  | Django version 2.1.15, using settings 'app.settings'
+app_1  | Starting development server at http://0.0.0.0:8000/
+app_1  | Quit the server with CONTROL-C.
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:33:03.921 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:33:03.921 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:33:03.925 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:33:03.945 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-06 21:49:28 UTC
+db_1   | 2020-01-07 01:33:04.046 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:33:04.049 UTC [20] LOG:  invalid record length at 0/1780AA0: wanted 24, got 0
+db_1   | 2020-01-07 01:33:04.049 UTC [20] LOG:  redo is not required
+db_1   | 2020-01-07 01:33:04.063 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:54:24.065 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:54:24.081 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:33:04 UTC
+db_1   | 2020-01-07 01:54:24.201 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo starts at 0/1780B10
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  invalid record length at 0/1780B48: wanted 24, got 0
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo done at 0/1780B10
+db_1   | 2020-01-07 01:54:24.215 UTC [1] LOG:  database system is ready to accept connections
+^CGracefully stopping... (press Ctrl+C again to force)
+Killing recipe-app-api_app_1 ... done
+Killing recipe-app-api_db_1  ... done
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Starting recipe-app-api_db_1 ... done
+Starting recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:58:32.647 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:58:32.647 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:58:32.649 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:58:32.665 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:54:24 UTC
+db_1   | 2020-01-07 01:58:32.795 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  redo starts at 0/1780BB8
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  invalid record length at 0/1780BF0: wanted 24, got 0
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  redo done at 0/1780BB8
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 01:58:34
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping recipe-app-api_app_1 ... 
+Stopping recipe-app-api_db_1  ... 
+Killing recipe-app-api_app_1  ... done
+Killing recipe-app-api_db_1   ... done
+IUSA20655:recipe-app-api zacharyl$ pip install -U Django
+DEPRECATION: Python 2.7 will reach the end of its life on January 1st, 2020. Please upgrade your Python as Python 2.7 won't be maintained after that date. A future version of pip will drop support for Python 2.7. More details about Python 2 support in pip, can be found at https://pip.pypa.io/en/latest/development/release-process/#python-2-support
+Collecting Django
+  Downloading https://files.pythonhosted.org/packages/a6/2b/fbd71ae0980c899c0df70779d36c5897a6b56518eb5942ddd53b0b969b30/Django-1.11.27-py2.py3-none-any.whl (6.9MB)
+     |████████████████████████████████| 7.0MB 2.0MB/s 
+Requirement already satisfied, skipping upgrade: pytz in /System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python (from Django) (2013.7)
+Installing collected packages: Django
+ERROR: Could not install packages due to an EnvironmentError: [Errno 13] Permission denied: '/Library/Python/2.7/site-packages/django'
+Consider using the `--user` option or check the permissions.
+
+IUSA20655:recipe-app-api zacharyl$ pip3 install django --upgrade
+Collecting django
+  Downloading https://files.pythonhosted.org/packages/55/d1/8ade70e65fa157e1903fe4078305ca53b6819ab212d9fbbe5755afc8ea2e/Django-3.0.2-py3-none-any.whl (7.4MB)
+     |████████████████████████████████| 7.4MB 2.0MB/s 
+Collecting asgiref~=3.2
+  Downloading https://files.pythonhosted.org/packages/a5/cb/5a235b605a9753ebcb2730c75e610fb51c8cab3f01230080a8229fa36adb/asgiref-3.2.3-py2.py3-none-any.whl
+Requirement already satisfied, skipping upgrade: pytz in /usr/local/lib/python3.7/site-packages (from django) (2019.3)
+Collecting sqlparse>=0.2.2
+  Downloading https://files.pythonhosted.org/packages/ef/53/900f7d2a54557c6a37886585a91336520e5539e3ae2423ff1102daf4f3a7/sqlparse-0.3.0-py2.py3-none-any.whl
+Installing collected packages: asgiref, sqlparse, django
+Successfully installed asgiref-3.2.3 django-3.0.2 sqlparse-0.3.0
+IUSA20655:recipe-app-api zacharyl$ django --version
+-bash: django: command not found
+IUSA20655:recipe-app-api zacharyl$ python --version
+Python 2.7.10
+IUSA20655:recipe-app-api zacharyl$ python3 --version
+Python 3.7.5
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Starting recipe-app-api_db_1 ... done
+Starting recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:04:22.632 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:04:22.632 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:04:22.633 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:04:22.645 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:58:32 UTC
+db_1   | 2020-01-07 02:04:22.785 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  redo starts at 0/1780C60
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  invalid record length at 0/1780C98: wanted 24, got 0
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  redo done at 0/1780C60
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:04:24
+^CERROR: Aborting.
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+recipe-app-api_db_1 is up-to-date
+Recreating recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:33:03.921 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:33:03.921 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:33:03.925 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:33:03.945 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-06 21:49:28 UTC
+db_1   | 2020-01-07 01:33:04.046 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:33:04.049 UTC [20] LOG:  invalid record length at 0/1780AA0: wanted 24, got 0
+db_1   | 2020-01-07 01:33:04.049 UTC [20] LOG:  redo is not required
+db_1   | 2020-01-07 01:33:04.063 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:54:24.065 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:54:24.081 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:33:04 UTC
+db_1   | 2020-01-07 01:54:24.201 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo starts at 0/1780B10
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  invalid record length at 0/1780B48: wanted 24, got 0
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo done at 0/1780B10
+db_1   | 2020-01-07 01:54:24.215 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:58:32.647 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:58:32.647 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:58:32.649 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:58:32.665 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:54:24 UTC
+db_1   | 2020-01-07 01:58:32.795 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  redo starts at 0/1780BB8
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  invalid record length at 0/1780BF0: wanted 24, got 0
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  redo done at 0/1780BB8
+db_1   | 2020-01-07 01:58:32.806 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:04:22.632 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:04:22.632 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:04:22.633 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:04:22.645 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:58:32 UTC
+db_1   | 2020-01-07 02:04:22.785 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  redo starts at 0/1780C60
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  invalid record length at 0/1780C98: wanted 24, got 0
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  redo done at 0/1780C60
+db_1   | 2020-01-07 02:04:22.792 UTC [1] LOG:  database system is ready to accept connections
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:06:08
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping recipe-app-api_app_1   ... 
+Stopping recipe-app-api_db_1    ... 
+Killing recipe-app-api_app_1    ... done
+Killing recipe-app-api_db_1     ... done
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Starting recipe-app-api_db_1 ... done
+Recreating recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:06:49.145 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:06:49.145 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:06:49.148 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:06:49.167 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:04:22 UTC
+db_1   | 2020-01-07 02:06:49.297 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:06:49.298 UTC [20] LOG:  redo starts at 0/1780D08
+db_1   | 2020-01-07 02:06:49.298 UTC [20] LOG:  invalid record length at 0/1780D40: wanted 24, got 0
+db_1   | 2020-01-07 02:06:49.299 UTC [20] LOG:  redo done at 0/1780D08
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:06:50
+Killing recipe-app-api_app_1    ... done
+Killing recipe-app-api_db_1     ... done
+IUSA20655:recipe-app-api zacharyl$ 
+IUSA20655:recipe-app-api zacharyl$ docker-compose --verbose up
+compose.config.config.find: Using configuration files: ./docker-compose.yml
+docker.utils.config.find_config_file: Trying paths: ['/Users/zacharyl/.docker/config.json', '/Users/zacharyl/.dockercfg']
+docker.utils.config.find_config_file: Found file at path: /Users/zacharyl/.docker/config.json
+docker.auth.load_config: Found 'auths' section
+docker.auth.parse_auth: Auth data for https://index.docker.io/v1/ is absent. Client might be using a credentials store instead.
+docker.auth.load_config: Found 'credsStore' section
+urllib3.connectionpool._new_conn: Starting new HTTPS connection (1): 192.168.99.100:2376
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/version HTTP/1.1" 200 870
+compose.cli.command.get_client: docker-compose version 1.24.1, build 4667896b
+docker-py version: 3.7.3
+CPython version: 3.6.8
+OpenSSL version: OpenSSL 1.1.0j  20 Nov 2018
+compose.cli.command.get_client: Docker base_url: https://192.168.99.100:2376
+compose.cli.command.get_client: Docker version: Platform={'Name': 'Docker Engine - Community'}, Components=[{'Name': 'Engine', 'Version': '19.03.5', 'Details': {'ApiVersion': '1.40', 'Arch': 'amd64', 'BuildTime': '2019-11-13T07:28:45.000000000+00:00', 'Experimental': 'false', 'GitCommit': '633a0ea838', 'GoVersion': 'go1.12.12', 'KernelVersion': '4.14.154-boot2docker', 'MinAPIVersion': '1.12', 'Os': 'linux'}}, {'Name': 'containerd', 'Version': 'v1.2.10', 'Details': {'GitCommit': 'b34a5c8af56e510852c35414db4c1f4fa6172339'}}, {'Name': 'runc', 'Version': '1.0.0-rc8+dev', 'Details': {'GitCommit': '3e425f80a8c931f88e6d94a8c831b9d5aa481657'}}, {'Name': 'docker-init', 'Version': '0.18.0', 'Details': {'GitCommit': 'fec3683'}}], Version=19.03.5, ApiVersion=1.40, MinAPIVersion=1.12, GitCommit=633a0ea838, GoVersion=go1.12.12, Os=linux, Arch=amd64, KernelVersion=4.14.154-boot2docker, BuildTime=2019-11-13T07:28:45.000000000+00:00
+compose.cli.verbose_proxy.proxy_callable: docker inspect_network <- ('recipeappapi_default')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/networks/recipeappapi_default HTTP/1.1" 404 53
+compose.cli.verbose_proxy.proxy_callable: docker info <- ()
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/info HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker info -> {'Architecture': 'x86_64',
+ 'BridgeNfIp6tables': True,
+ 'BridgeNfIptables': True,
+ 'CPUSet': True,
+ 'CPUShares': True,
+ 'CgroupDriver': 'cgroupfs',
+ 'ClusterAdvertise': '',
+ 'ClusterStore': '',
+ 'ContainerdCommit': {'Expected': 'b34a5c8af56e510852c35414db4c1f4fa6172339',
+                      'ID': 'b34a5c8af56e510852c35414db4c1f4fa6172339'},
+...
+compose.cli.verbose_proxy.proxy_callable: docker inspect_network <- ('recipe-app-api_default')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/networks/recipe-app-api_default HTTP/1.1" 200 567
+compose.cli.verbose_proxy.proxy_callable: docker inspect_network -> {'Attachable': True,
+ 'ConfigFrom': {'Network': ''},
+ 'ConfigOnly': False,
+ 'Containers': {},
+ 'Created': '2019-12-30T23:35:18.740757985Z',
+ 'Driver': 'bridge',
+ 'EnableIPv6': False,
+ 'IPAM': {'Config': [{'Gateway': '172.20.0.1', 'Subnet': '172.20.0.0/16'}],
+          'Driver': 'default',
+          'Options': None},
+...
+compose.cli.verbose_proxy.proxy_callable: docker containers <- (all=False, filters={'label': ['com.docker.compose.project=recipe-app-api', 'com.docker.compose.oneoff=False']})
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/json?limit=-1&all=0&size=0&trunc_cmd=0&filters=%7B%22label%22%3A+%5B%22com.docker.compose.project%3Drecipe-app-api%22%2C+%22com.docker.compose.oneoff%3DFalse%22%5D%7D HTTP/1.1" 200 3
+compose.cli.verbose_proxy.proxy_callable: docker containers -> (list with 0 items)
+compose.cli.verbose_proxy.proxy_callable: docker containers <- (all=False, filters={'label': ['com.docker.compose.project=recipeappapi', 'com.docker.compose.oneoff=False']})
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/json?limit=-1&all=0&size=0&trunc_cmd=0&filters=%7B%22label%22%3A+%5B%22com.docker.compose.project%3Drecipeappapi%22%2C+%22com.docker.compose.oneoff%3DFalse%22%5D%7D HTTP/1.1" 200 3
+compose.cli.verbose_proxy.proxy_callable: docker containers -> (list with 0 items)
+compose.cli.verbose_proxy.proxy_callable: docker containers <- (all=True, filters={'label': ['com.docker.compose.project=recipe-app-api', 'com.docker.compose.service=db', 'com.docker.compose.oneoff=False']})
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/json?limit=-1&all=1&size=0&trunc_cmd=0&filters=%7B%22label%22%3A+%5B%22com.docker.compose.project%3Drecipe-app-api%22%2C+%22com.docker.compose.service%3Ddb%22%2C+%22com.docker.compose.oneoff%3DFalse%22%5D%7D HTTP/1.1" 200 1375
+compose.cli.verbose_proxy.proxy_callable: docker containers -> (list with 1 items)
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container <- ('8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container -> {'AppArmorProfile': '',
+ 'Args': ['postgres'],
+ 'Config': {'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['postgres'],
+            'Domainname': '',
+            'Entrypoint': ['docker-entrypoint.sh'],
+            'Env': ['POSTGRES_DB=app',
+                    'POSTGRES_USER=postgres',
+...
+compose.cli.verbose_proxy.proxy_callable: docker containers <- (all=True, filters={'label': ['com.docker.compose.project=recipe-app-api', 'com.docker.compose.service=app', 'com.docker.compose.oneoff=False']})
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/json?limit=-1&all=1&size=0&trunc_cmd=0&filters=%7B%22label%22%3A+%5B%22com.docker.compose.project%3Drecipe-app-api%22%2C+%22com.docker.compose.service%3Dapp%22%2C+%22com.docker.compose.oneoff%3DFalse%22%5D%7D HTTP/1.1" 200 1327
+compose.cli.verbose_proxy.proxy_callable: docker containers -> (list with 1 items)
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container <- ('5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container -> {'AppArmorProfile': '',
+ 'Args': ['-c',
+          'python manage.py wait_for_db &&\n'
+          '       python manage.py migrate &&\n'
+          '       python manage.py runserver --noreload 0.0.0.0:8000'],
+ 'Config': {'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['sh',
+                    '-c',
+...
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image <- ('postgres:10-alpine')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/images/postgres:10-alpine/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image -> {'Architecture': 'amd64',
+ 'Author': '',
+ 'Comment': '',
+ 'Config': {'ArgsEscaped': True,
+            'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['postgres'],
+            'Domainname': '',
+            'Entrypoint': ['docker-entrypoint.sh'],
+...
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image <- ('recipe-app-api_app')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/images/recipe-app-api_app/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image -> {'Architecture': 'amd64',
+ 'Author': 'zlessner',
+ 'Comment': '',
+ 'Config': {'ArgsEscaped': True,
+            'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['python3'],
+            'Domainname': '',
+            'Entrypoint': None,
+...
+compose.cli.verbose_proxy.proxy_callable: docker containers <- (all=True, filters={'label': ['com.docker.compose.project=recipe-app-api', 'com.docker.compose.service=db', 'com.docker.compose.oneoff=False']})
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/json?limit=-1&all=1&size=0&trunc_cmd=0&filters=%7B%22label%22%3A+%5B%22com.docker.compose.project%3Drecipe-app-api%22%2C+%22com.docker.compose.service%3Ddb%22%2C+%22com.docker.compose.oneoff%3DFalse%22%5D%7D HTTP/1.1" 200 1375
+compose.cli.verbose_proxy.proxy_callable: docker containers -> (list with 1 items)
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image <- ('postgres:10-alpine')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/images/postgres:10-alpine/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image -> {'Architecture': 'amd64',
+ 'Author': '',
+ 'Comment': '',
+ 'Config': {'ArgsEscaped': True,
+            'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['postgres'],
+            'Domainname': '',
+            'Entrypoint': ['docker-entrypoint.sh'],
+...
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container <- ('8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container -> {'AppArmorProfile': '',
+ 'Args': ['postgres'],
+ 'Config': {'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['postgres'],
+            'Domainname': '',
+            'Entrypoint': ['docker-entrypoint.sh'],
+            'Env': ['POSTGRES_DB=app',
+                    'POSTGRES_USER=postgres',
+...
+compose.cli.verbose_proxy.proxy_callable: docker containers <- (all=True, filters={'label': ['com.docker.compose.project=recipe-app-api', 'com.docker.compose.service=app', 'com.docker.compose.oneoff=False']})
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/json?limit=-1&all=1&size=0&trunc_cmd=0&filters=%7B%22label%22%3A+%5B%22com.docker.compose.project%3Drecipe-app-api%22%2C+%22com.docker.compose.service%3Dapp%22%2C+%22com.docker.compose.oneoff%3DFalse%22%5D%7D HTTP/1.1" 200 1327
+compose.cli.verbose_proxy.proxy_callable: docker containers -> (list with 1 items)
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image <- ('recipe-app-api_app')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/images/recipe-app-api_app/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image -> {'Architecture': 'amd64',
+ 'Author': 'zlessner',
+ 'Comment': '',
+ 'Config': {'ArgsEscaped': True,
+            'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['python3'],
+            'Domainname': '',
+            'Entrypoint': None,
+...
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container <- ('5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container -> {'AppArmorProfile': '',
+ 'Args': ['-c',
+          'python manage.py wait_for_db &&\n'
+          '       python manage.py migrate &&\n'
+          '       python manage.py runserver --noreload 0.0.0.0:8000'],
+ 'Config': {'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['sh',
+                    '-c',
+...
+compose.service._containers_have_diverged: recipe-app-api_app_1 has diverged: 0d4a7200d40e5def5094b445a7906a1c945625b5c4e02ede66d1defd506e6050 != 6950f3bae6e4553e2cacadf6df5e6698106d7f13c005b5055aff861fec8d770c
+compose.parallel.feed_queue: Pending: {<Service: app>, <Service: db>}
+compose.parallel.feed_queue: Starting producer thread for <Service: db>
+Starting recipe-app-api_db_1 ... 
+compose.parallel.feed_queue: Pending: {<Container: recipe-app-api_db_1 (8aee68)>}
+compose.parallel.feed_queue: Starting producer thread for <Container: recipe-app-api_db_1 (8aee68)>
+compose.cli.verbose_proxy.proxy_callable: docker attach <- ('8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047', stdout=True, stderr=True, stream=True)
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "POST /v1.25/containers/8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047/attach?logs=0&stdout=1&stderr=1&stream=1 HTTP/1.1" 101 0
+urllib3.connectionpool._new_conn: Starting new HTTPS connection (2): 192.168.99.100:2376
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker attach -> <docker.types.daemon.CancellableStream object at 0x10c993f98>
+compose.cli.verbose_proxy.proxy_callable: docker start <- ('8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047')
+compose.parallel.feed_queue: Pending: {<Service: app>}
+compose.parallel.feed_queue: Pending: set()
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "POST /v1.25/containers/8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047/start HTTP/1.1" 204 0
+compose.cli.verbose_proxy.proxy_callable: docker start -> None
+compose.parallel.parallel_execute_iter: Finished processing: <Container: recipe-app-api_db_1 (8aee68Starting recipe-app-api_db_1 ... done
+compose.parallel.feed_queue: Pending: set()
+compose.parallel.parallel_execute_iter: Finished processing: <Service: db>
+compose.parallel.feed_queue: Pending: {<Service: app>}
+compose.parallel.feed_queue: Starting producer thread for <Service: app>
+Recreating recipe-app-api_app_1 ... 
+compose.parallel.feed_queue: Pending: {<Container: recipe-app-api_app_1 (5f8eaa)>}
+compose.parallel.feed_queue: Starting producer thread for <Container: recipe-app-api_app_1 (5f8eaa)>
+compose.cli.verbose_proxy.proxy_callable: docker stop <- ('5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0', timeout=10)
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "POST /v1.25/containers/5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0/stop?t=10 HTTP/1.1" 304 0
+compose.cli.verbose_proxy.proxy_callable: docker stop -> None
+compose.cli.verbose_proxy.proxy_callable: docker rename <- ('5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0', '5f8eaa826394_recipe-app-api_app_1')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "POST /v1.25/containers/5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0/rename?name=5f8eaa826394_recipe-app-api_app_1 HTTP/1.1" 204 0
+compose.cli.verbose_proxy.proxy_callable: docker rename -> None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image <- ('recipe-app-api_app')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/images/recipe-app-api_app/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image -> {'Architecture': 'amd64',
+ 'Author': 'zlessner',
+ 'Comment': '',
+ 'Config': {'ArgsEscaped': True,
+            'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['python3'],
+            'Domainname': '',
+            'Entrypoint': None,
+...
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image <- ('sha256:aa34be07ba4006209853a0d45ed3fce908f12982a8e064484c7feea1bc9d4cf1')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/images/sha256:aa34be07ba4006209853a0d45ed3fce908f12982a8e064484c7feea1bc9d4cf1/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image -> {'Architecture': 'amd64',
+ 'Author': 'zlessner',
+ 'Comment': '',
+ 'Config': {'ArgsEscaped': True,
+            'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['python3'],
+            'Domainname': '',
+            'Entrypoint': None,
+...
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image <- ('recipe-app-api_app')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/images/recipe-app-api_app/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_image -> {'Architecture': 'amd64',
+ 'Author': 'zlessner',
+ 'Comment': '',
+ 'Config': {'ArgsEscaped': True,
+            'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['python3'],
+            'Domainname': '',
+            'Entrypoint': None,
+...
+compose.service.build_container_labels: Added config hash: 6950f3bae6e4553e2cacadf6df5e6698106d7f13c005b5055aff861fec8d770c
+compose.cli.verbose_proxy.proxy_callable: docker create_host_config <- (links=[], port_bindings={'8000/tcp': ['8000']}, binds=['/Users/zacharyl/Desktop/Other/proj/recipe-app-api/app:/app:rw'], volumes_from=[], privileged=False, network_mode='recipe-app-api_default', devices=None, dns=None, dns_opt=None, dns_search=None, restart_policy=None, runtime=None, cap_add=None, cap_drop=None, mem_limit=None, mem_reservation=None, memswap_limit=None, ulimits=None, log_config={'Type': '', 'Config': {}}, extra_hosts=None, read_only=None, pid_mode=None, security_opt=None, ipc_mode=None, cgroup_parent=None, cpu_quota=None, shm_size=None, sysctls=None, pids_limit=None, tmpfs=[], oom_kill_disable=None, oom_score_adj=None, mem_swappiness=None, group_add=None, userns_mode=None, init=None, init_path=None, isolation=None, cpu_count=None, cpu_percent=None, nano_cpus=None, volume_driver=None, cpuset_cpus=None, cpu_shares=None, storage_opt=None, blkio_weight=None, blkio_weight_device=None, device_read_bps=None, device_read_iops=None, device_write_bps=None, device_write_iops=None, mounts=None, device_cgroup_rules=None, cpu_period=None, cpu_rt_period=None, cpu_rt_runtime=None)
+compose.cli.verbose_proxy.proxy_callable: docker create_host_config -> {'Binds': ['/Users/zacharyl/Desktop/Other/proj/recipe-app-api/app:/app:rw'],
+ 'Links': [],
+ 'LogConfig': {'Config': {}, 'Type': ''},
+ 'NetworkMode': 'recipe-app-api_default',
+ 'PortBindings': {'8000/tcp': [{'HostIp': '', 'HostPort': '8000'}]},
+ 'VolumesFrom': []}
+compose.cli.verbose_proxy.proxy_callable: docker create_container <- (command='sh -c "python manage.py wait_for_db &&\n       python manage.py migrate &&\n       python manage.py runserver 0.0.0.0:8000"\n', environment=['DB_HOST=db', 'DB_NAME=app', 'DB_USER=postgres', 'DB_PASS=supersecretpassword'], ports=[('8000', 'tcp')], volumes={'/app': {}}, name='recipe-app-api_app_1', detach=True, labels={'com.docker.compose.project': 'recipe-app-api', 'com.docker.compose.service': 'app', 'com.docker.compose.oneoff': 'False', 'com.docker.compose.container-number': '1', 'com.docker.compose.version': '1.24.1', 'com.docker.compose.config-hash': '6950f3bae6e4553e2cacadf6df5e6698106d7f13c005b5055aff861fec8d770c'}, image='recipe-app-api_app', host_config={'NetworkMode': 'recipe-app-api_default', 'VolumesFrom': [], 'Binds': ['/Users/zacharyl/Desktop/Other/proj/recipe-app-api/app:/app:rw'], 'PortBindings': {'8000/tcp': [{'HostIp': '', 'HostPort': '8000'}]}, 'Links': [], 'LogConfig': {'Type': '', 'Config': {}}}, networking_config={'EndpointsConfig': {'recipe-app-api_default': {'Aliases': ['app'], 'IPAMConfig': {}}}})
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "POST /v1.25/containers/create?name=recipe-app-api_app_1 HTTP/1.1" 201 88
+compose.cli.verbose_proxy.proxy_callable: docker create_container -> {'Id': '7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa',
+ 'Warnings': []}
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container <- ('7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker inspect_container -> {'AppArmorProfile': '',
+ 'Args': ['-c',
+          'python manage.py wait_for_db &&\n'
+          '       python manage.py migrate &&\n'
+          '       python manage.py runserver 0.0.0.0:8000'],
+ 'Config': {'AttachStderr': False,
+            'AttachStdin': False,
+            'AttachStdout': False,
+            'Cmd': ['sh',
+                    '-c',
+...
+compose.cli.verbose_proxy.proxy_callable: docker attach <- ('7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa', stdout=True, stderr=True, stream=True)
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "POST /v1.25/containers/7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa/attach?logs=0&stdout=1&stderr=1&stream=1 HTTP/1.1" 101 0
+urllib3.connectionpool._new_conn: Starting new HTTPS connection (3): 192.168.99.100:2376
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/containers/7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa/json HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker attach -> <docker.types.daemon.CancellableStream object at 0x10c94b940>
+compose.cli.verbose_proxy.proxy_callable: docker disconnect_container_from_network <- ('7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa', 'recipe-app-api_default')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "POST /v1.25/networks/recipe-app-api_default/disconnect HTTP/1.1" 200 0
+compose.cli.verbose_proxy.proxy_callable: docker disconnect_container_from_network -> None
+compose.cli.verbose_proxy.proxy_callable: docker connect_container_to_network <- ('7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa', 'recipe-app-api_default', aliases=['7679a83c97f0', 'app'], ipv4_address=None, ipv6_address=None, links=[], link_local_ips=None)
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "POST /v1.25/networks/recipe-app-api_default/connect HTTP/1.1" 200 0
+compose.cli.verbose_proxy.proxy_callable: docker connect_container_to_network -> None
+compose.cli.verbose_proxy.proxy_callable: docker start <- ('7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa')
+compose.parallel.feed_queue: Pending: set()
+compose.parallel.feed_queue: Pending: set()
+compose.parallel.feed_queue: Pending: set()
+compose.parallel.feed_queue: Pending: set()
+compose.parallel.feed_queue: Pending: set()
+compose.parallel.feed_queue: Pending: set()
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "POST /v1.25/containers/7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa/start HTTP/1.1" 204 0
+compose.cli.verbose_proxy.proxy_callable: docker start -> None
+compose.cli.verbose_proxy.proxy_callable: docker remove_container <- ('5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0')
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "DELETE /v1.25/containers/5f8eaa82639472f60699d4e5be96fe8ace23c368d5258d299ac0096fccf8a8f0?v=False&link=False&force=False HTTP/1.1" 204 0
+compose.cli.verbose_proxy.proxy_callable: docker remove_container -> None
+compose.parallel.parallel_execute_iter: Finished processing: <Container: recipe-app-api_app_1 (5f8eaRecreating recipe-app-api_app_1 ... done
+compose.parallel.feed_queue: Pending: set()
+compose.parallel.parallel_execute_iter: Finished processing: <Service: app>
+compose.parallel.feed_queue: Pending: set()
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+compose.cli.verbose_proxy.proxy_callable: docker events <- (filters={'label': ['com.docker.compose.project=recipe-app-api', 'com.docker.compose.oneoff=False']}, decode=True)
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:08:48.797 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:08:48.798 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:08:48.803 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:08:48.817 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:06:49 UTC
+db_1   | 2020-01-07 02:08:48.947 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:08:48.949 UTC [20] LOG:  invalid record length at 0/1780DB0: wanted 24, got 0
+db_1   | 2020-01-07 02:08:48.949 UTC [20] LOG:  redo is not required
+urllib3.connectionpool._make_request: https://192.168.99.100:2376 "GET /v1.25/events?filters=%7B%22label%22%3A+%5B%22com.docker.compose.project%3Drecipe-app-api%22%2C+%22com.docker.compose.oneoff%3DFalse%22%5D%7D HTTP/1.1" 200 None
+compose.cli.verbose_proxy.proxy_callable: docker events -> <docker.types.daemon.CancellableStream object at 0x10c993b00>
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:08:50
+^CERROR: compose.cli.main.main: Aborting.
+IUSA20655:recipe-app-api zacharyl$ docker-compose stop
+Stopping recipe-app-api_app_1 ... done
+Stopping recipe-app-api_db_1  ... done
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Starting recipe-app-api_db_1 ... done
+Starting recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:11:01.077 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:11:01.077 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:11:01.079 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:11:01.089 UTC [20] LOG:  database system was shut down at 2020-01-07 02:10:56 UTC
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:11:02
+^CERROR: Aborting.
+IUSA20655:recipe-app-api zacharyl$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+5db8cfcfd4885323c1ba714f056499f8e1b8a199e9da635257dc43100a99d183
+82d8b3668ab2d023a0a716f3d51186e467de8213f519282ae9042fc04f7e0652
+3bb9f4d8e508f0f7cb3133248eeb27a7850520c216a34bb3b20808843f921466
+73a3f4ff40d6f8101e37af9999d4bed6662425c0b4a8cbca0cc5dfef28aa8e53
+d0611359286e47a30775ba2e137f6a002feae517b3ae66ad34346d591738cf79
+7837c0d588059cedba3594410b0f616494dda3a769ecbdfa92456a24a4604e40
+3afc00fb23e007fcc80b917945699c52b9cf374b1cc7a701d8047dff73c2b5a5
+
+Total reclaimed space: 23B
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+recipe-app-api_db_1 is up-to-date
+recipe-app-api_app_1 is up-to-date
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:33:03.921 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:33:03.921 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:33:03.925 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:33:03.945 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-06 21:49:28 UTC
+db_1   | 2020-01-07 01:33:04.046 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:33:04.049 UTC [20] LOG:  invalid record length at 0/1780AA0: wanted 24, got 0
+db_1   | 2020-01-07 01:33:04.049 UTC [20] LOG:  redo is not required
+db_1   | 2020-01-07 01:33:04.063 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:54:24.065 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:54:24.081 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:33:04 UTC
+db_1   | 2020-01-07 01:54:24.201 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo starts at 0/1780B10
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  invalid record length at 0/1780B48: wanted 24, got 0
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo done at 0/1780B10
+db_1   | 2020-01-07 01:54:24.215 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:58:32.647 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:58:32.647 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:58:32.649 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:58:32.665 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:54:24 UTC
+db_1   | 2020-01-07 01:58:32.795 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  redo starts at 0/1780BB8
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  invalid record length at 0/1780BF0: wanted 24, got 0
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  redo done at 0/1780BB8
+db_1   | 2020-01-07 01:58:32.806 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:04:22.632 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:04:22.632 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:04:22.633 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:04:22.645 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:58:32 UTC
+db_1   | 2020-01-07 02:04:22.785 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  redo starts at 0/1780C60
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  invalid record length at 0/1780C98: wanted 24, got 0
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  redo done at 0/1780C60
+db_1   | 2020-01-07 02:04:22.792 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:06:49.145 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:06:49.145 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:06:49.148 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:06:49.167 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:04:22 UTC
+db_1   | 2020-01-07 02:06:49.297 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:06:49.298 UTC [20] LOG:  redo starts at 0/1780D08
+db_1   | 2020-01-07 02:06:49.298 UTC [20] LOG:  invalid record length at 0/1780D40: wanted 24, got 0
+db_1   | 2020-01-07 02:06:49.299 UTC [20] LOG:  redo done at 0/1780D08
+db_1   | 2020-01-07 02:06:49.303 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:08:48.797 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:08:48.798 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:08:48.803 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:08:48.817 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:06:49 UTC
+db_1   | 2020-01-07 02:08:48.947 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:08:48.949 UTC [20] LOG:  invalid record length at 0/1780DB0: wanted 24, got 0
+db_1   | 2020-01-07 02:08:48.949 UTC [20] LOG:  redo is not required
+db_1   | 2020-01-07 02:08:48.954 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 2020-01-07 02:10:56.533 UTC [1] LOG:  received smart shutdown request
+db_1   | 2020-01-07 02:10:56.536 UTC [1] LOG:  worker process: logical replication launcher (PID 26) exited with exit code 1
+db_1   | 2020-01-07 02:10:56.536 UTC [21] LOG:  shutting down
+db_1   | 2020-01-07 02:10:56.543 UTC [1] LOG:  database system is shut down
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:11:01.077 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:11:01.077 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:11:01.079 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:11:01.089 UTC [20] LOG:  database system was shut down at 2020-01-07 02:10:56 UTC
+db_1   | 2020-01-07 02:11:01.092 UTC [1] LOG:  database system is ready to accept connections
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:08:50
+app_1  | Django version 2.1.15, using settings 'app.settings'
+app_1  | Starting development server at http://0.0.0.0:8000/
+app_1  | Quit the server with CONTROL-C.
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:11:02
+app_1  | Django version 2.1.15, using settings 'app.settings'
+app_1  | Starting development server at http://0.0.0.0:8000/
+app_1  | Quit the server with CONTROL-C.
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping recipe-app-api_app_1 ... 
+Stopping recipe-app-api_db_1  ... 
+Killing recipe-app-api_app_1  ... done
+Killing recipe-app-api_db_1   ... done
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Starting recipe-app-api_db_1 ... done
+Starting recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:12:56.685 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:12:56.685 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:12:56.686 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:12:56.697 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:11:01 UTC
+db_1   | 2020-01-07 02:12:56.817 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:12:56.818 UTC [20] LOG:  redo starts at 0/1780EC8
+db_1   | 2020-01-07 02:12:56.818 UTC [20] LOG:  invalid record length at 0/1780F00: wanted 24, got 0
+db_1   | 2020-01-07 02:12:56.818 UTC [20] LOG:  redo done at 0/1780EC8
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:12:58
+^CERROR: Aborting.
+IUSA20655:recipe-app-api zacharyl$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Total reclaimed space: 0B
+IUSA20655:recipe-app-api zacharyl$ docker-compose build
+db uses an image, skipping
+Building app
+Step 1/13 : FROM python:3.7-alpine
+ ---> 8922d588eec6
+Step 2/13 : MAINTAINER zlessner
+ ---> Using cache
+ ---> dbf29e619371
+Step 3/13 : ENV PYTHONUNBUFFERED 1
+ ---> Using cache
+ ---> aca9a0e78b99
+Step 4/13 : COPY ./requirements.txt /requirements.txt
+ ---> Using cache
+ ---> b0ff227bfe3a
+Step 5/13 : RUN apk add --update --no-cache postgresql-client
+ ---> Using cache
+ ---> 76309e2f1720
+Step 6/13 : RUN apk add --update --no-cache --virtual .tmp-build-deps     gcc libc-dev linux-headers postgresql-dev
+ ---> Using cache
+ ---> 1d35bd808f2a
+Step 7/13 : RUN pip install -r /requirements.txt
+ ---> Using cache
+ ---> e94b1c4d0657
+Step 8/13 : RUN apk del .tmp-build-deps
+ ---> Using cache
+ ---> 294ce5e53400
+Step 9/13 : RUN mkdir /app
+ ---> Using cache
+ ---> d8c8b8026270
+Step 10/13 : WORKDIR /app
+ ---> Using cache
+ ---> 7463a142163b
+Step 11/13 : COPY ./app /app
+ ---> Using cache
+ ---> 185cb47d5402
+Step 12/13 : RUN adduser -D user
+ ---> Using cache
+ ---> 48a23ee59bc5
+Step 13/13 : USER user
+ ---> Using cache
+ ---> aa34be07ba40
+Successfully built aa34be07ba40
+Successfully tagged recipe-app-api_app:latest
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+recipe-app-api_db_1 is up-to-date
+recipe-app-api_app_1 is up-to-date
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:33:03.921 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:33:03.921 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:33:03.925 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:33:03.945 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-06 21:49:28 UTC
+db_1   | 2020-01-07 01:33:04.046 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:33:04.049 UTC [20] LOG:  invalid record length at 0/1780AA0: wanted 24, got 0
+db_1   | 2020-01-07 01:33:04.049 UTC [20] LOG:  redo is not required
+db_1   | 2020-01-07 01:33:04.063 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:54:24.064 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:54:24.065 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:54:24.081 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:33:04 UTC
+db_1   | 2020-01-07 01:54:24.201 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo starts at 0/1780B10
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  invalid record length at 0/1780B48: wanted 24, got 0
+db_1   | 2020-01-07 01:54:24.202 UTC [20] LOG:  redo done at 0/1780B10
+db_1   | 2020-01-07 01:54:24.215 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 01:58:32.647 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 01:58:32.647 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 01:58:32.649 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 01:58:32.665 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:54:24 UTC
+db_1   | 2020-01-07 01:58:32.795 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  redo starts at 0/1780BB8
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  invalid record length at 0/1780BF0: wanted 24, got 0
+db_1   | 2020-01-07 01:58:32.798 UTC [20] LOG:  redo done at 0/1780BB8
+db_1   | 2020-01-07 01:58:32.806 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:04:22.632 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:04:22.632 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:04:22.633 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:04:22.645 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 01:58:32 UTC
+db_1   | 2020-01-07 02:04:22.785 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  redo starts at 0/1780C60
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  invalid record length at 0/1780C98: wanted 24, got 0
+db_1   | 2020-01-07 02:04:22.787 UTC [20] LOG:  redo done at 0/1780C60
+db_1   | 2020-01-07 02:04:22.792 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:06:49.145 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:06:49.145 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:06:49.148 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:06:49.167 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:04:22 UTC
+db_1   | 2020-01-07 02:06:49.297 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:06:49.298 UTC [20] LOG:  redo starts at 0/1780D08
+db_1   | 2020-01-07 02:06:49.298 UTC [20] LOG:  invalid record length at 0/1780D40: wanted 24, got 0
+db_1   | 2020-01-07 02:06:49.299 UTC [20] LOG:  redo done at 0/1780D08
+db_1   | 2020-01-07 02:06:49.303 UTC [1] LOG:  database system is ready to accept connections
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:08:48.797 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:08:48.798 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+app_1  | Waiting for database...
+db_1   | 2020-01-07 02:08:48.803 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+app_1  | Database available!
+db_1   | 2020-01-07 02:08:48.817 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:06:49 UTC
+app_1  | Operations to perform:
+db_1   | 2020-01-07 02:08:48.947 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+db_1   | 2020-01-07 02:08:48.949 UTC [20] LOG:  invalid record length at 0/1780DB0: wanted 24, got 0
+app_1  | Running migrations:
+db_1   | 2020-01-07 02:08:48.949 UTC [20] LOG:  redo is not required
+app_1  |   No migrations to apply.
+db_1   | 2020-01-07 02:08:48.954 UTC [1] LOG:  database system is ready to accept connections
+app_1  | Performing system checks...
+db_1   | 2020-01-07 02:10:56.533 UTC [1] LOG:  received smart shutdown request
+app_1  | 
+db_1   | 2020-01-07 02:10:56.536 UTC [1] LOG:  worker process: logical replication launcher (PID 26) exited with exit code 1
+app_1  | System check identified no issues (0 silenced).
+db_1   | 2020-01-07 02:10:56.536 UTC [21] LOG:  shutting down
+app_1  | January 07, 2020 - 02:08:50
+db_1   | 2020-01-07 02:10:56.543 UTC [1] LOG:  database system is shut down
+app_1  | Django version 2.1.15, using settings 'app.settings'
+db_1   | 
+app_1  | Starting development server at http://0.0.0.0:8000/
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+app_1  | Quit the server with CONTROL-C.
+db_1   | 
+app_1  | Waiting for database...
+db_1   | 2020-01-07 02:11:01.077 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+app_1  | Database available!
+db_1   | 2020-01-07 02:11:01.077 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+app_1  | Operations to perform:
+db_1   | 2020-01-07 02:11:01.079 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+db_1   | 2020-01-07 02:11:01.089 UTC [20] LOG:  database system was shut down at 2020-01-07 02:10:56 UTC
+app_1  | Running migrations:
+db_1   | 2020-01-07 02:11:01.092 UTC [1] LOG:  database system is ready to accept connections
+app_1  |   No migrations to apply.
+db_1   | 
+app_1  | Performing system checks...
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+app_1  | 
+db_1   | 
+app_1  | System check identified no issues (0 silenced).
+db_1   | 2020-01-07 02:12:56.685 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+app_1  | January 07, 2020 - 02:11:02
+db_1   | 2020-01-07 02:12:56.685 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+app_1  | Django version 2.1.15, using settings 'app.settings'
+db_1   | 2020-01-07 02:12:56.686 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+app_1  | Starting development server at http://0.0.0.0:8000/
+db_1   | 2020-01-07 02:12:56.697 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:11:01 UTC
+app_1  | Quit the server with CONTROL-C.
+db_1   | 2020-01-07 02:12:56.817 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+app_1  | Waiting for database...
+db_1   | 2020-01-07 02:12:56.818 UTC [20] LOG:  redo starts at 0/1780EC8
+app_1  | Database available!
+db_1   | 2020-01-07 02:12:56.818 UTC [20] LOG:  invalid record length at 0/1780F00: wanted 24, got 0
+app_1  | Operations to perform:
+db_1   | 2020-01-07 02:12:56.818 UTC [20] LOG:  redo done at 0/1780EC8
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+db_1   | 2020-01-07 02:12:56.828 UTC [1] LOG:  database system is ready to accept connections
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:12:58
+app_1  | Django version 2.1.15, using settings 'app.settings'
+app_1  | Starting development server at http://0.0.0.0:8000/
+app_1  | Quit the server with CONTROL-C.
+app_1  | Invalid HTTP_HOST header: '192.168.99.100:8000'. You may need to add '192.168.99.100' to ALLOWED_HOSTS.
+app_1  | Bad Request: /
+app_1  | [07/Jan/2020 02:15:29] "GET / HTTP/1.1" 400 57195
+app_1  | Invalid HTTP_HOST header: '192.168.99.100:8000'. You may need to add '192.168.99.100' to ALLOWED_HOSTS.
+app_1  | Bad Request: /favicon.ico
+app_1  | [07/Jan/2020 02:15:29] "GET /favicon.ico HTTP/1.1" 400 57239
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:18:49
+app_1  | Django version 2.1.15, using settings 'app.settings'
+app_1  | Starting development server at http://0.0.0.0:8000/
+app_1  | Quit the server with CONTROL-C.
+app_1  | [07/Jan/2020 02:19:09] "GET / HTTP/1.1" 200 16348
+app_1  | [07/Jan/2020 02:19:09] "GET /static/admin/css/fonts.css HTTP/1.1" 200 423
+app_1  | [07/Jan/2020 02:19:09] "GET /static/admin/fonts/Roboto-Regular-webfont.woff HTTP/1.1" 200 80304
+app_1  | [07/Jan/2020 02:19:09] "GET /static/admin/fonts/Roboto-Bold-webfont.woff HTTP/1.1" 200 82564
+app_1  | [07/Jan/2020 02:19:09] "GET /static/admin/fonts/Roboto-Light-webfont.woff HTTP/1.1" 200 81348
+app_1  | Not Found: /favicon.ico
+app_1  | [07/Jan/2020 02:19:09] "GET /favicon.ico HTTP/1.1" 404 1974
+app_1  | [07/Jan/2020 02:30:38] "GET / HTTP/1.1" 200 16348
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping recipe-app-api_app_1 ... 
+Stopping recipe-app-api_db_1  ... 
+Killing recipe-app-api_app_1  ... done
+Killing recipe-app-api_db_1   ... done
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Starting recipe-app-api_db_1 ... done
+Starting recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:35:17.768 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:35:17.768 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:35:17.770 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:35:17.787 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:12:56 UTC
+db_1   | 2020-01-07 02:35:17.916 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:35:17.918 UTC [20] LOG:  redo starts at 0/1780F70
+db_1   | 2020-01-07 02:35:17.918 UTC [20] LOG:  invalid record length at 0/1780FA8: wanted 24, got 0
+db_1   | 2020-01-07 02:35:17.918 UTC [20] LOG:  redo done at 0/1780F70
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:35:19
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping recipe-app-api_app_1 ... 
+Stopping recipe-app-api_db_1  ... 
+Killing recipe-app-api_app_1  ... done
+Killing recipe-app-api_db_1   ... done
+IUSA20655:recipe-app-api zacharyl$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+7679a83c97f0e8c811caa8f9636751bd92ebf5dbdbeb2a7a631d677f176200fa
+8aee68eeab59ecdb9a27a379f3993b2bd62d601e0be2c258342bb90c02edd047
+
+Total reclaimed space: 63B
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Creating recipe-app-api_db_1 ... done
+Creating recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | The files belonging to this database system will be owned by user "postgres".
+db_1   | This user must also own the server process.
+db_1   | 
+db_1   | The database cluster will be initialized with locale "en_US.utf8".
+db_1   | The default database encoding has accordingly been set to "UTF8".
+db_1   | The default text search configuration will be set to "english".
+db_1   | 
+db_1   | Data page checksums are disabled.
+db_1   | 
+db_1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db_1   | creating subdirectories ... ok
+db_1   | selecting default max_connections ... 100
+db_1   | selecting default shared_buffers ... 128MB
+db_1   | selecting default timezone ... UTC
+db_1   | selecting dynamic shared memory implementation ... posix
+db_1   | creating configuration files ... ok
+db_1   | running bootstrap script ... ok
+db_1   | performing post-bootstrap initialization ... sh: locale: not found
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Traceback (most recent call last):
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+app_1  |     self.connect()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+app_1  |     self.connection = self.get_new_connection(conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+app_1  |     connection = Database.connect(**conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py", line 130, in connect
+app_1  |     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+app_1  | psycopg2.OperationalError: could not connect to server: Connection refused
+app_1  | 	Is the server running on host "db" (172.20.0.2) and accepting
+app_1  | 	TCP/IP connections on port 5432?
+app_1  | 
+app_1  | 
+app_1  | The above exception was the direct cause of the following exception:
+app_1  | 
+app_1  | Traceback (most recent call last):
+app_1  |   File "manage.py", line 15, in <module>
+app_1  |     execute_from_command_line(sys.argv)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+app_1  |     utility.execute()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/__init__.py", line 375, in execute
+app_1  |     self.fetch_command(subcommand).run_from_argv(self.argv)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/base.py", line 316, in run_from_argv
+app_1  |     self.execute(*args, **cmd_options)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/base.py", line 353, in execute
+app_1  |     output = self.handle(*args, **options)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/base.py", line 83, in wrapped
+app_1  |     res = handle_func(*args, **kwargs)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/commands/migrate.py", line 82, in handle
+app_1  |     executor = MigrationExecutor(connection, self.migration_progress_callback)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/executor.py", line 18, in __init__
+app_1  |     self.loader = MigrationLoader(self.connection)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/loader.py", line 49, in __init__
+app_1  |     self.build_graph()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/loader.py", line 212, in build_graph
+app_1  |     self.applied_migrations = recorder.applied_migrations()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/recorder.py", line 61, in applied_migrations
+app_1  |     if self.has_table():
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/recorder.py", line 44, in has_table
+app_1  |     return self.Migration._meta.db_table in self.connection.introspection.table_names(self.connection.cursor())
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 255, in cursor
+app_1  |     return self._cursor()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 232, in _cursor
+app_1  |     self.ensure_connection()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+app_1  |     self.connect()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+app_1  |     raise dj_exc_value.with_traceback(traceback) from exc_value
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+app_1  |     self.connect()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+app_1  |     self.connection = self.get_new_connection(conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+app_1  |     connection = Database.connect(**conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py", line 130, in connect
+app_1  |     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+app_1  | django.db.utils.OperationalError: could not connect to server: Connection refused
+app_1  | 	Is the server running on host "db" (172.20.0.2) and accepting
+app_1  | 	TCP/IP connections on port 5432?
+db_1   | 2020-01-07 02:35:38.904 UTC [28] WARNING:  no usable system locales were found
+db_1   | ok
+app_1  | 
+db_1   | syncing data to disk ... ok
+db_1   | 
+db_1   | Success. You can now start the database server using:
+db_1   | 
+db_1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1   | 
+recipe-app-api_app_1 exited with code 1
+db_1   | 
+db_1   | WARNING: enabling "trust" authentication for local connections
+db_1   | You can change this by editing pg_hba.conf or using the option -A, or
+db_1   | --auth-local and --auth-host, the next time you run initdb.
+db_1   | waiting for server to start....2020-01-07 02:35:39.727 UTC [33] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:35:39.736 UTC [34] LOG:  database system was shut down at 2020-01-07 02:35:39 UTC
+db_1   | 2020-01-07 02:35:39.737 UTC [33] LOG:  database system is ready to accept connections
+db_1   |  done
+db_1   | server started
+db_1   | CREATE DATABASE
+db_1   | 
+db_1   | 
+db_1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1   | 
+db_1   | 2020-01-07 02:35:40.098 UTC [33] LOG:  received fast shutdown request
+db_1   | waiting for server to shut down....2020-01-07 02:35:40.099 UTC [33] LOG:  aborting any active transactions
+db_1   | 2020-01-07 02:35:40.100 UTC [33] LOG:  worker process: logical replication launcher (PID 40) exited with exit code 1
+db_1   | 2020-01-07 02:35:40.100 UTC [35] LOG:  shutting down
+db_1   | 2020-01-07 02:35:40.106 UTC [33] LOG:  database system is shut down
+db_1   |  done
+db_1   | server stopped
+db_1   | 
+db_1   | PostgreSQL init process complete; ready for start up.
+db_1   | 
+db_1   | 2020-01-07 02:35:40.206 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:35:40.206 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:35:40.208 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:35:40.219 UTC [44] LOG:  database system was shut down at 2020-01-07 02:35:40 UTC
+^CERROR: Aborting.
+IUSA20655:recipe-app-api zacharyl$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+5f4d8c711ddf36fc6e0c711b3de9228feb6267e74fe881e72e5d19b6e8ae06a0
+
+Total reclaimed space: 0B
+IUSA20655:recipe-app-api zacharyl$ docker-compose build
+db uses an image, skipping
+Building app
+Step 1/13 : FROM python:3.7-alpine
+ ---> 8922d588eec6
+Step 2/13 : MAINTAINER zlessner
+ ---> Using cache
+ ---> dbf29e619371
+Step 3/13 : ENV PYTHONUNBUFFERED 1
+ ---> Using cache
+ ---> aca9a0e78b99
+Step 4/13 : COPY ./requirements.txt /requirements.txt
+ ---> Using cache
+ ---> b0ff227bfe3a
+Step 5/13 : RUN apk add --update --no-cache postgresql-client
+ ---> Using cache
+ ---> 76309e2f1720
+Step 6/13 : RUN apk add --update --no-cache --virtual .tmp-build-deps     gcc libc-dev linux-headers postgresql-dev
+ ---> Using cache
+ ---> 1d35bd808f2a
+Step 7/13 : RUN pip install -r /requirements.txt
+ ---> Using cache
+ ---> e94b1c4d0657
+Step 8/13 : RUN apk del .tmp-build-deps
+ ---> Using cache
+ ---> 294ce5e53400
+Step 9/13 : RUN mkdir /app
+ ---> Using cache
+ ---> d8c8b8026270
+Step 10/13 : WORKDIR /app
+ ---> Using cache
+ ---> 7463a142163b
+Step 11/13 : COPY ./app /app
+ ---> 3bac0bbe2788
+Step 12/13 : RUN adduser -D user
+ ---> Running in 47252bc5659b
+Removing intermediate container 47252bc5659b
+ ---> ab97575f022b
+Step 13/13 : USER user
+ ---> Running in 188244ccb8bd
+Removing intermediate container 188244ccb8bd
+ ---> d0573be99a70
+Successfully built d0573be99a70
+Successfully tagged recipe-app-api_app:latest
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+recipe-app-api_db_1 is up-to-date
+Creating recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | The files belonging to this database system will be owned by user "postgres".
+db_1   | This user must also own the server process.
+db_1   | 
+db_1   | The database cluster will be initialized with locale "en_US.utf8".
+db_1   | The default database encoding has accordingly been set to "UTF8".
+db_1   | The default text search configuration will be set to "english".
+db_1   | 
+db_1   | Data page checksums are disabled.
+db_1   | 
+db_1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db_1   | creating subdirectories ... ok
+db_1   | selecting default max_connections ... 100
+db_1   | selecting default shared_buffers ... 128MB
+db_1   | selecting default timezone ... UTC
+db_1   | selecting dynamic shared memory implementation ... posix
+db_1   | creating configuration files ... ok
+db_1   | running bootstrap script ... ok
+db_1   | sh: locale: not found
+db_1   | 2020-01-07 02:35:38.904 UTC [28] WARNING:  no usable system locales were found
+db_1   | performing post-bootstrap initialization ... ok
+db_1   | syncing data to disk ... ok
+db_1   | 
+db_1   | Success. You can now start the database server using:
+db_1   | 
+db_1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1   | 
+db_1   | 
+db_1   | WARNING: enabling "trust" authentication for local connections
+db_1   | You can change this by editing pg_hba.conf or using the option -A, or
+db_1   | --auth-local and --auth-host, the next time you run initdb.
+db_1   | waiting for server to start....2020-01-07 02:35:39.727 UTC [33] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:35:39.736 UTC [34] LOG:  database system was shut down at 2020-01-07 02:35:39 UTC
+db_1   | 2020-01-07 02:35:39.737 UTC [33] LOG:  database system is ready to accept connections
+db_1   |  done
+db_1   | server started
+db_1   | CREATE DATABASE
+db_1   | 
+db_1   | 
+db_1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1   | 
+db_1   | 2020-01-07 02:35:40.098 UTC [33] LOG:  received fast shutdown request
+db_1   | waiting for server to shut down....2020-01-07 02:35:40.099 UTC [33] LOG:  aborting any active transactions
+db_1   | 2020-01-07 02:35:40.100 UTC [33] LOG:  worker process: logical replication launcher (PID 40) exited with exit code 1
+db_1   | 2020-01-07 02:35:40.100 UTC [35] LOG:  shutting down
+db_1   | 2020-01-07 02:35:40.106 UTC [33] LOG:  database system is shut down
+db_1   |  done
+db_1   | server stopped
+db_1   | 
+db_1   | PostgreSQL init process complete; ready for start up.
+db_1   | 
+db_1   | 2020-01-07 02:35:40.206 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:35:40.206 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:35:40.208 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:35:40.219 UTC [44] LOG:  database system was shut down at 2020-01-07 02:35:40 UTC
+db_1   | 2020-01-07 02:35:40.221 UTC [1] LOG:  database system is ready to accept connections
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   Applying contenttypes.0001_initial... OK
+app_1  |   Applying contenttypes.0002_remove_content_type_name... OK
+app_1  |   Applying auth.0001_initial... OK
+app_1  |   Applying auth.0002_alter_permission_name_max_length... OK
+app_1  |   Applying auth.0003_alter_user_email_max_length... OK
+app_1  |   Applying auth.0004_alter_user_username_opts... OK
+app_1  |   Applying auth.0005_alter_user_last_login_null... OK
+app_1  |   Applying auth.0006_require_contenttypes_0002... OK
+app_1  |   Applying auth.0007_alter_validators_add_error_messages... OK
+app_1  |   Applying auth.0008_alter_user_username_max_length... OK
+app_1  |   Applying auth.0009_alter_user_last_name_max_length... OK
+app_1  |   Applying core.0001_initial... OK
+app_1  |   Applying admin.0001_initial... OK
+app_1  |   Applying admin.0002_logentry_remove_auto_add... OK
+app_1  |   Applying admin.0003_logentry_add_action_flag_choices... OK
+app_1  |   Applying sessions.0001_initial... OK
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:36:23
+app_1  | Django version 2.1.15, using settings 'app.settings'
+app_1  | Starting development server at http://0.0.0.0:8000/
+app_1  | Quit the server with CONTROL-C.
+^CERROR: Aborting.
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+recipe-app-api_db_1 is up-to-date
+recipe-app-api_app_1 is up-to-date
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   Applying contenttypes.0001_initial... OK
+app_1  |   Applying contenttypes.0002_remove_content_type_name... OK
+app_1  |   Applying auth.0001_initial... OK
+app_1  |   Applying auth.0002_alter_permission_name_max_length... OK
+app_1  |   Applying auth.0003_alter_user_email_max_length... OK
+app_1  |   Applying auth.0004_alter_user_username_opts... OK
+app_1  |   Applying auth.0005_alter_user_last_login_null... OK
+app_1  |   Applying auth.0006_require_contenttypes_0002... OK
+app_1  |   Applying auth.0007_alter_validators_add_error_messages... OK
+app_1  |   Applying auth.0008_alter_user_username_max_length... OK
+app_1  |   Applying auth.0009_alter_user_last_name_max_length... OK
+app_1  |   Applying core.0001_initial... OK
+app_1  |   Applying admin.0001_initial... OK
+app_1  |   Applying admin.0002_logentry_remove_auto_add... OK
+app_1  |   Applying admin.0003_logentry_add_action_flag_choices... OK
+app_1  |   Applying sessions.0001_initial... OK
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:36:23
+app_1  | Django version 2.1.15, using settings 'app.settings'
+app_1  | Starting development server at http://0.0.0.0:8000/
+app_1  | Quit the server with CONTROL-C.
+app_1  | [07/Jan/2020 02:36:29] "GET / HTTP/1.1" 200 16348
+db_1   | The files belonging to this database system will be owned by user "postgres".
+db_1   | This user must also own the server process.
+db_1   | 
+db_1   | The database cluster will be initialized with locale "en_US.utf8".
+db_1   | The default database encoding has accordingly been set to "UTF8".
+db_1   | The default text search configuration will be set to "english".
+db_1   | 
+db_1   | Data page checksums are disabled.
+db_1   | 
+db_1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db_1   | creating subdirectories ... ok
+db_1   | selecting default max_connections ... 100
+db_1   | selecting default shared_buffers ... 128MB
+db_1   | selecting default timezone ... UTC
+db_1   | selecting dynamic shared memory implementation ... posix
+db_1   | creating configuration files ... ok
+db_1   | running bootstrap script ... ok
+db_1   | sh: locale: not found
+db_1   | 2020-01-07 02:35:38.904 UTC [28] WARNING:  no usable system locales were found
+db_1   | performing post-bootstrap initialization ... ok
+db_1   | syncing data to disk ... ok
+db_1   | 
+db_1   | Success. You can now start the database server using:
+db_1   | 
+db_1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1   | 
+db_1   | 
+db_1   | WARNING: enabling "trust" authentication for local connections
+db_1   | You can change this by editing pg_hba.conf or using the option -A, or
+db_1   | --auth-local and --auth-host, the next time you run initdb.
+db_1   | waiting for server to start....2020-01-07 02:35:39.727 UTC [33] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:35:39.736 UTC [34] LOG:  database system was shut down at 2020-01-07 02:35:39 UTC
+db_1   | 2020-01-07 02:35:39.737 UTC [33] LOG:  database system is ready to accept connections
+db_1   |  done
+db_1   | server started
+db_1   | CREATE DATABASE
+db_1   | 
+db_1   | 
+db_1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1   | 
+db_1   | 2020-01-07 02:35:40.098 UTC [33] LOG:  received fast shutdown request
+db_1   | waiting for server to shut down....2020-01-07 02:35:40.099 UTC [33] LOG:  aborting any active transactions
+db_1   | 2020-01-07 02:35:40.100 UTC [33] LOG:  worker process: logical replication launcher (PID 40) exited with exit code 1
+db_1   | 2020-01-07 02:35:40.100 UTC [35] LOG:  shutting down
+db_1   | 2020-01-07 02:35:40.106 UTC [33] LOG:  database system is shut down
+db_1   |  done
+db_1   | server stopped
+db_1   | 
+db_1   | PostgreSQL init process complete; ready for start up.
+db_1   | 
+db_1   | 2020-01-07 02:35:40.206 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:35:40.206 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:35:40.208 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:35:40.219 UTC [44] LOG:  database system was shut down at 2020-01-07 02:35:40 UTC
+db_1   | 2020-01-07 02:35:40.221 UTC [1] LOG:  database system is ready to accept connections
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping recipe-app-api_app_1 ... 
+Stopping recipe-app-api_db_1  ... 
+Killing recipe-app-api_app_1  ... done
+Killing recipe-app-api_db_1   ... done
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Starting recipe-app-api_db_1 ... done
+Starting recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:38:05.480 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:38:05.480 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:38:05.482 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:38:05.493 UTC [20] LOG:  database system was interrupted; last known up at 2020-01-07 02:35:40 UTC
+db_1   | 2020-01-07 02:38:05.614 UTC [20] LOG:  database system was not properly shut down; automatic recovery in progress
+db_1   | 2020-01-07 02:38:05.615 UTC [20] LOG:  redo starts at 0/163D5C0
+db_1   | 2020-01-07 02:38:05.628 UTC [20] LOG:  invalid record length at 0/16BC280: wanted 24, got 0
+db_1   | 2020-01-07 02:38:05.629 UTC [20] LOG:  redo done at 0/16BC248
+db_1   | 2020-01-07 02:38:05.629 UTC [20] LOG:  last completed transaction was at log time 2020-01-07 02:37:40.43625+00
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   No migrations to apply.
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:38:06
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping recipe-app-api_app_1 ... 
+Stopping recipe-app-api_db_1  ... 
+Killing recipe-app-api_app_1  ... done
+Killing recipe-app-api_db_1   ... done
+IUSA20655:recipe-app-api zacharyl$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+05ad7261298a347299b7c94259b6517df1623aa243cc87869e29850cb6a056fa
+1668390a99f24644219b6cf603ec24f09f29201da876934d3a14a9c56b3de2b0
+
+Total reclaimed space: 63B
+IUSA20655:recipe-app-api zacharyl$ docker-compose build
+db uses an image, skipping
+Building app
+Step 1/13 : FROM python:3.7-alpine
+ ---> 8922d588eec6
+Step 2/13 : MAINTAINER zlessner
+ ---> Using cache
+ ---> dbf29e619371
+Step 3/13 : ENV PYTHONUNBUFFERED 1
+ ---> Using cache
+ ---> aca9a0e78b99
+Step 4/13 : COPY ./requirements.txt /requirements.txt
+ ---> Using cache
+ ---> b0ff227bfe3a
+Step 5/13 : RUN apk add --update --no-cache postgresql-client
+ ---> Using cache
+ ---> 76309e2f1720
+Step 6/13 : RUN apk add --update --no-cache --virtual .tmp-build-deps     gcc libc-dev linux-headers postgresql-dev
+ ---> Using cache
+ ---> 1d35bd808f2a
+Step 7/13 : RUN pip install -r /requirements.txt
+ ---> Using cache
+ ---> e94b1c4d0657
+Step 8/13 : RUN apk del .tmp-build-deps
+ ---> Using cache
+ ---> 294ce5e53400
+Step 9/13 : RUN mkdir /app
+ ---> Using cache
+ ---> d8c8b8026270
+Step 10/13 : WORKDIR /app
+ ---> Using cache
+ ---> 7463a142163b
+Step 11/13 : COPY ./app /app
+ ---> 73a163d1efbd
+Step 12/13 : RUN adduser -D user
+ ---> Running in b05b6b5f74a2
+Removing intermediate container b05b6b5f74a2
+ ---> 2b0e50e8213b
+Step 13/13 : USER user
+ ---> Running in 5e7ee6c81af5
+Removing intermediate container 5e7ee6c81af5
+ ---> 4bd043f77ebc
+Successfully built 4bd043f77ebc
+Successfully tagged recipe-app-api_app:latest
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Creating recipe-app-api_db_1 ... done
+Creating recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | The files belonging to this database system will be owned by user "postgres".
+db_1   | This user must also own the server process.
+db_1   | 
+db_1   | The database cluster will be initialized with locale "en_US.utf8".
+db_1   | The default database encoding has accordingly been set to "UTF8".
+db_1   | The default text search configuration will be set to "english".
+db_1   | 
+db_1   | Data page checksums are disabled.
+db_1   | 
+db_1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db_1   | creating subdirectories ... ok
+db_1   | selecting default max_connections ... 100
+db_1   | selecting default shared_buffers ... 128MB
+db_1   | selecting default timezone ... UTC
+db_1   | selecting dynamic shared memory implementation ... posix
+db_1   | creating configuration files ... ok
+db_1   | running bootstrap script ... ok
+db_1   | performing post-bootstrap initialization ... sh: locale: not found
+app_1  | Waiting for database...
+db_1   | 2020-01-07 02:38:35.322 UTC [28] WARNING:  no usable system locales were found
+db_1   | ok
+db_1   | syncing data to disk ... ok
+db_1   | 
+db_1   | WARNING: enabling "trust" authentication for local connections
+db_1   | You can change this by editing pg_hba.conf or using the option -A, or
+db_1   | --auth-local and --auth-host, the next time you run initdb.
+db_1   | 
+db_1   | Success. You can now start the database server using:
+db_1   | 
+db_1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1   | 
+db_1   | waiting for server to start....2020-01-07 02:38:36.058 UTC [33] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:38:36.071 UTC [34] LOG:  database system was shut down at 2020-01-07 02:38:35 UTC
+app_1  | Database available!
+app_1  | Traceback (most recent call last):
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+app_1  |     self.connect()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+app_1  |     self.connection = self.get_new_connection(conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+app_1  |     connection = Database.connect(**conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py", line 130, in connect
+app_1  |     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+app_1  | psycopg2.OperationalError: could not connect to server: Connection refused
+app_1  | 	Is the server running on host "db" (172.20.0.2) and accepting
+app_1  | 	TCP/IP connections on port 5432?
+app_1  | 
+app_1  | 
+app_1  | The above exception was the direct cause of the following exception:
+app_1  | 
+app_1  | Traceback (most recent call last):
+app_1  |   File "manage.py", line 15, in <module>
+app_1  |     execute_from_command_line(sys.argv)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+app_1  |     utility.execute()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/__init__.py", line 375, in execute
+app_1  |     self.fetch_command(subcommand).run_from_argv(self.argv)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/base.py", line 316, in run_from_argv
+app_1  |     self.execute(*args, **cmd_options)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/base.py", line 353, in execute
+app_1  |     output = self.handle(*args, **options)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/base.py", line 83, in wrapped
+app_1  |     res = handle_func(*args, **kwargs)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/commands/migrate.py", line 82, in handle
+app_1  |     executor = MigrationExecutor(connection, self.migration_progress_callback)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/executor.py", line 18, in __init__
+app_1  |     self.loader = MigrationLoader(self.connection)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/loader.py", line 49, in __init__
+app_1  |     self.build_graph()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/loader.py", line 212, in build_graph
+app_1  |     self.applied_migrations = recorder.applied_migrations()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/recorder.py", line 61, in applied_migrations
+app_1  |     if self.has_table():
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/recorder.py", line 44, in has_table
+app_1  |     return self.Migration._meta.db_table in self.connection.introspection.table_names(self.connection.cursor())
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 255, in cursor
+app_1  |     return self._cursor()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 232, in _cursor
+app_1  |     self.ensure_connection()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+app_1  |     self.connect()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+app_1  |     raise dj_exc_value.with_traceback(traceback) from exc_value
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+app_1  |     self.connect()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+app_1  |     self.connection = self.get_new_connection(conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+app_1  |     connection = Database.connect(**conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py", line 130, in connect
+app_1  |     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+app_1  | django.db.utils.OperationalError: could not connect to server: Connection refused
+app_1  | 	Is the server running on host "db" (172.20.0.2) and accepting
+app_1  | 	TCP/IP connections on port 5432?
+db_1   | 2020-01-07 02:38:36.073 UTC [33] LOG:  database system is ready to accept connections
+db_1   |  done
+app_1  | 
+recipe-app-api_app_1 exited with code 1
+db_1   | server started
+db_1   | CREATE DATABASE
+db_1   | 
+db_1   | 
+db_1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1   | 
+db_1   | 2020-01-07 02:38:36.411 UTC [33] LOG:  received fast shutdown request
+db_1   | waiting for server to shut down....2020-01-07 02:38:36.413 UTC [33] LOG:  aborting any active transactions
+db_1   | 2020-01-07 02:38:36.414 UTC [33] LOG:  worker process: logical replication launcher (PID 40) exited with exit code 1
+db_1   | 2020-01-07 02:38:36.414 UTC [35] LOG:  shutting down
+db_1   | 2020-01-07 02:38:36.422 UTC [33] LOG:  database system is shut down
+db_1   |  done
+db_1   | server stopped
+db_1   | 
+db_1   | PostgreSQL init process complete; ready for start up.
+db_1   | 
+db_1   | 2020-01-07 02:38:36.526 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:38:36.526 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:38:36.528 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:38:36.539 UTC [44] LOG:  database system was shut down at 2020-01-07 02:38:36 UTC
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping recipe-app-api_db_1  ... done
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Starting recipe-app-api_db_1 ... done
+Starting recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | 
+db_1   | PostgreSQL Database directory appears to contain a database; Skipping initialization
+db_1   | 
+db_1   | 2020-01-07 02:38:51.198 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:38:51.198 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:38:51.199 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:38:51.209 UTC [20] LOG:  database system was shut down at 2020-01-07 02:38:48 UTC
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   Applying contenttypes.0001_initial... OK
+app_1  |   Applying contenttypes.0002_remove_content_type_name... OK
+app_1  |   Applying auth.0001_initial... OK
+app_1  |   Applying auth.0002_alter_permission_name_max_length... OK
+app_1  |   Applying auth.0003_alter_user_email_max_length... OK
+app_1  |   Applying auth.0004_alter_user_username_opts... OK
+app_1  |   Applying auth.0005_alter_user_last_login_null... OK
+app_1  |   Applying auth.0006_require_contenttypes_0002... OK
+app_1  |   Applying auth.0007_alter_validators_add_error_messages... OK
+app_1  |   Applying auth.0008_alter_user_username_max_length... OK
+app_1  |   Applying auth.0009_alter_user_last_name_max_length... OK
+app_1  |   Applying core.0001_initial... OK
+app_1  |   Applying admin.0001_initial... OK
+app_1  |   Applying admin.0002_logentry_remove_auto_add... OK
+app_1  |   Applying admin.0003_logentry_add_action_flag_choices... OK
+app_1  |   Applying sessions.0001_initial... OK
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:38:52
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping recipe-app-api_app_1 ... 
+Stopping recipe-app-api_db_1  ... 
+Killing recipe-app-api_app_1  ... done
+Killing recipe-app-api_db_1   ... done
+IUSA20655:recipe-app-api zacharyl$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+1e1a1da449e9a80dc23d035b8ffd54e5e46a2c5d0d46653f8145b3af67f0f729
+4807d00fcd9860ab99f5744943ce04e24036b76f26092b96629cf2dc3f76faac
+
+Total reclaimed space: 63B
+IUSA20655:recipe-app-api zacharyl$ docker-compose build
+db uses an image, skipping
+Building app
+Step 1/13 : FROM python:3.7-alpine
+ ---> 8922d588eec6
+Step 2/13 : MAINTAINER zlessner
+ ---> Using cache
+ ---> dbf29e619371
+Step 3/13 : ENV PYTHONUNBUFFERED 1
+ ---> Using cache
+ ---> aca9a0e78b99
+Step 4/13 : COPY ./requirements.txt /requirements.txt
+ ---> Using cache
+ ---> b0ff227bfe3a
+Step 5/13 : RUN apk add --update --no-cache postgresql-client
+ ---> Using cache
+ ---> 76309e2f1720
+Step 6/13 : RUN apk add --update --no-cache --virtual .tmp-build-deps     gcc libc-dev linux-headers postgresql-dev
+ ---> Using cache
+ ---> 1d35bd808f2a
+Step 7/13 : RUN pip install -r /requirements.txt
+ ---> Using cache
+ ---> e94b1c4d0657
+Step 8/13 : RUN apk del .tmp-build-deps
+ ---> Using cache
+ ---> 294ce5e53400
+Step 9/13 : RUN mkdir /app
+ ---> Using cache
+ ---> d8c8b8026270
+Step 10/13 : WORKDIR /app
+ ---> Using cache
+ ---> 7463a142163b
+Step 11/13 : COPY ./app /app
+ ---> e0515082539e
+Step 12/13 : RUN adduser -D user
+ ---> Running in dcfb70d2669c
+Removing intermediate container dcfb70d2669c
+ ---> e0982d912579
+Step 13/13 : USER user
+ ---> Running in 85ef1626cbbf
+Removing intermediate container 85ef1626cbbf
+ ---> e1038659bf77
+Successfully built e1038659bf77
+Successfully tagged recipe-app-api_app:latest
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+Creating recipe-app-api_db_1 ... done
+Creating recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | The files belonging to this database system will be owned by user "postgres".
+db_1   | This user must also own the server process.
+db_1   | 
+db_1   | The database cluster will be initialized with locale "en_US.utf8".
+db_1   | The default database encoding has accordingly been set to "UTF8".
+db_1   | The default text search configuration will be set to "english".
+db_1   | 
+db_1   | Data page checksums are disabled.
+db_1   | 
+db_1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db_1   | creating subdirectories ... ok
+db_1   | selecting default max_connections ... 100
+db_1   | selecting default shared_buffers ... 128MB
+db_1   | selecting default timezone ... UTC
+db_1   | selecting dynamic shared memory implementation ... posix
+db_1   | creating configuration files ... ok
+db_1   | running bootstrap script ... ok
+db_1   | performing post-bootstrap initialization ... sh: locale: not found
+app_1  | Waiting for database...
+db_1   | 2020-01-07 02:39:29.391 UTC [28] WARNING:  no usable system locales were found
+db_1   | ok
+db_1   | syncing data to disk ... ok
+db_1   | 
+db_1   | WARNING: enabling "trust" authentication for local connections
+db_1   | You can change this by editing pg_hba.conf or using the option -A, or
+db_1   | --auth-local and --auth-host, the next time you run initdb.
+db_1   | 
+db_1   | Success. You can now start the database server using:
+db_1   | 
+db_1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1   | 
+db_1   | waiting for server to start....2020-01-07 02:39:30.378 UTC [33] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:39:30.402 UTC [34] LOG:  database system was shut down at 2020-01-07 02:39:30 UTC
+app_1  | Database available!
+app_1  | Traceback (most recent call last):
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+app_1  |     self.connect()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+app_1  |     self.connection = self.get_new_connection(conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+app_1  |     connection = Database.connect(**conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py", line 130, in connect
+app_1  |     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+app_1  | psycopg2.OperationalError: could not connect to server: Connection refused
+app_1  | 	Is the server running on host "db" (172.20.0.2) and accepting
+app_1  | 	TCP/IP connections on port 5432?
+app_1  | 
+app_1  | 
+app_1  | The above exception was the direct cause of the following exception:
+app_1  | 
+app_1  | Traceback (most recent call last):
+app_1  |   File "manage.py", line 15, in <module>
+app_1  |     execute_from_command_line(sys.argv)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/__init__.py", line 381, in execute_from_command_line
+app_1  |     utility.execute()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/__init__.py", line 375, in execute
+app_1  |     self.fetch_command(subcommand).run_from_argv(self.argv)
+db_1   | 2020-01-07 02:39:30.404 UTC [33] LOG:  database system is ready to accept connections
+db_1   |  done
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/base.py", line 316, in run_from_argv
+app_1  |     self.execute(*args, **cmd_options)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/base.py", line 353, in execute
+app_1  |     output = self.handle(*args, **options)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/base.py", line 83, in wrapped
+app_1  |     res = handle_func(*args, **kwargs)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/core/management/commands/migrate.py", line 82, in handle
+app_1  |     executor = MigrationExecutor(connection, self.migration_progress_callback)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/executor.py", line 18, in __init__
+app_1  |     self.loader = MigrationLoader(self.connection)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/loader.py", line 49, in __init__
+app_1  |     self.build_graph()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/loader.py", line 212, in build_graph
+app_1  |     self.applied_migrations = recorder.applied_migrations()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/recorder.py", line 61, in applied_migrations
+app_1  |     if self.has_table():
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/migrations/recorder.py", line 44, in has_table
+app_1  |     return self.Migration._meta.db_table in self.connection.introspection.table_names(self.connection.cursor())
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 255, in cursor
+app_1  |     return self._cursor()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 232, in _cursor
+app_1  |     self.ensure_connection()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+app_1  |     self.connect()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/utils.py", line 89, in __exit__
+app_1  |     raise dj_exc_value.with_traceback(traceback) from exc_value
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 216, in ensure_connection
+app_1  |     self.connect()
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/base/base.py", line 194, in connect
+app_1  |     self.connection = self.get_new_connection(conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/django/db/backends/postgresql/base.py", line 178, in get_new_connection
+app_1  |     connection = Database.connect(**conn_params)
+app_1  |   File "/usr/local/lib/python3.7/site-packages/psycopg2/__init__.py", line 130, in connect
+app_1  |     conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+app_1  | django.db.utils.OperationalError: could not connect to server: Connection refused
+app_1  | 	Is the server running on host "db" (172.20.0.2) and accepting
+app_1  | 	TCP/IP connections on port 5432?
+app_1  | 
+recipe-app-api_app_1 exited with code 1
+db_1   | server started
+db_1   | CREATE DATABASE
+db_1   | 
+db_1   | 
+db_1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1   | 
+db_1   | 2020-01-07 02:39:30.815 UTC [33] LOG:  received fast shutdown request
+db_1   | waiting for server to shut down....2020-01-07 02:39:30.816 UTC [33] LOG:  aborting any active transactions
+db_1   | 2020-01-07 02:39:30.817 UTC [33] LOG:  worker process: logical replication launcher (PID 40) exited with exit code 1
+db_1   | 2020-01-07 02:39:30.817 UTC [35] LOG:  shutting down
+db_1   | 2020-01-07 02:39:30.823 UTC [33] LOG:  database system is shut down
+db_1   |  done
+db_1   | server stopped
+db_1   | 
+db_1   | PostgreSQL init process complete; ready for start up.
+db_1   | 
+db_1   | 2020-01-07 02:39:30.926 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:39:30.926 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:39:30.929 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:39:30.945 UTC [44] LOG:  database system was shut down at 2020-01-07 02:39:30 UTC
+^CERROR: Aborting.
+IUSA20655:recipe-app-api zacharyl$ docker container prune
+WARNING! This will remove all stopped containers.
+Are you sure you want to continue? [y/N] y
+Deleted Containers:
+8c76895373e261e8b96b45016f41bdeba5fd2bb39fc29f187c72db22bccc3379
+
+Total reclaimed space: 0B
+IUSA20655:recipe-app-api zacharyl$ docker-compose build
+db uses an image, skipping
+Building app
+Step 1/13 : FROM python:3.7-alpine
+ ---> 8922d588eec6
+Step 2/13 : MAINTAINER zlessner
+ ---> Using cache
+ ---> dbf29e619371
+Step 3/13 : ENV PYTHONUNBUFFERED 1
+ ---> Using cache
+ ---> aca9a0e78b99
+Step 4/13 : COPY ./requirements.txt /requirements.txt
+ ---> Using cache
+ ---> b0ff227bfe3a
+Step 5/13 : RUN apk add --update --no-cache postgresql-client
+ ---> Using cache
+ ---> 76309e2f1720
+Step 6/13 : RUN apk add --update --no-cache --virtual .tmp-build-deps     gcc libc-dev linux-headers postgresql-dev
+ ---> Using cache
+ ---> 1d35bd808f2a
+Step 7/13 : RUN pip install -r /requirements.txt
+ ---> Using cache
+ ---> e94b1c4d0657
+Step 8/13 : RUN apk del .tmp-build-deps
+ ---> Using cache
+ ---> 294ce5e53400
+Step 9/13 : RUN mkdir /app
+ ---> Using cache
+ ---> d8c8b8026270
+Step 10/13 : WORKDIR /app
+ ---> Using cache
+ ---> 7463a142163b
+Step 11/13 : COPY ./app /app
+ ---> cfd771895e7a
+Step 12/13 : RUN adduser -D user
+ ---> Running in 58931d33b0bd
+Removing intermediate container 58931d33b0bd
+ ---> f15ed422dbec
+Step 13/13 : USER user
+ ---> Running in e7682478cdb1
+Removing intermediate container e7682478cdb1
+ ---> 608c194d02fd
+Successfully built 608c194d02fd
+Successfully tagged recipe-app-api_app:latest
+IUSA20655:recipe-app-api zacharyl$ docker-compose up
+recipe-app-api_db_1 is up-to-date
+Creating recipe-app-api_app_1 ... done
+Attaching to recipe-app-api_db_1, recipe-app-api_app_1
+db_1   | The files belonging to this database system will be owned by user "postgres".
+db_1   | This user must also own the server process.
+db_1   | 
+db_1   | The database cluster will be initialized with locale "en_US.utf8".
+db_1   | The default database encoding has accordingly been set to "UTF8".
+db_1   | The default text search configuration will be set to "english".
+db_1   | 
+db_1   | Data page checksums are disabled.
+db_1   | 
+db_1   | fixing permissions on existing directory /var/lib/postgresql/data ... ok
+db_1   | creating subdirectories ... ok
+db_1   | selecting default max_connections ... 100
+db_1   | selecting default shared_buffers ... 128MB
+db_1   | selecting default timezone ... UTC
+db_1   | selecting dynamic shared memory implementation ... posix
+db_1   | creating configuration files ... ok
+db_1   | running bootstrap script ... ok
+db_1   | sh: locale: not found
+db_1   | 2020-01-07 02:39:29.391 UTC [28] WARNING:  no usable system locales were found
+db_1   | performing post-bootstrap initialization ... ok
+db_1   | syncing data to disk ... ok
+db_1   | 
+db_1   | WARNING: enabling "trust" authentication for local connections
+db_1   | You can change this by editing pg_hba.conf or using the option -A, or
+db_1   | --auth-local and --auth-host, the next time you run initdb.
+db_1   | 
+db_1   | Success. You can now start the database server using:
+db_1   | 
+db_1   |     pg_ctl -D /var/lib/postgresql/data -l logfile start
+db_1   | 
+db_1   | waiting for server to start....2020-01-07 02:39:30.378 UTC [33] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:39:30.402 UTC [34] LOG:  database system was shut down at 2020-01-07 02:39:30 UTC
+db_1   | 2020-01-07 02:39:30.404 UTC [33] LOG:  database system is ready to accept connections
+db_1   |  done
+db_1   | server started
+db_1   | CREATE DATABASE
+db_1   | 
+db_1   | 
+db_1   | /usr/local/bin/docker-entrypoint.sh: ignoring /docker-entrypoint-initdb.d/*
+db_1   | 
+db_1   | 2020-01-07 02:39:30.815 UTC [33] LOG:  received fast shutdown request
+db_1   | waiting for server to shut down....2020-01-07 02:39:30.816 UTC [33] LOG:  aborting any active transactions
+db_1   | 2020-01-07 02:39:30.817 UTC [33] LOG:  worker process: logical replication launcher (PID 40) exited with exit code 1
+db_1   | 2020-01-07 02:39:30.817 UTC [35] LOG:  shutting down
+db_1   | 2020-01-07 02:39:30.823 UTC [33] LOG:  database system is shut down
+db_1   |  done
+db_1   | server stopped
+db_1   | 
+db_1   | PostgreSQL init process complete; ready for start up.
+db_1   | 
+db_1   | 2020-01-07 02:39:30.926 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+db_1   | 2020-01-07 02:39:30.926 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+db_1   | 2020-01-07 02:39:30.929 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+db_1   | 2020-01-07 02:39:30.945 UTC [44] LOG:  database system was shut down at 2020-01-07 02:39:30 UTC
+db_1   | 2020-01-07 02:39:30.948 UTC [1] LOG:  database system is ready to accept connections
+app_1  | Waiting for database...
+app_1  | Database available!
+app_1  | Operations to perform:
+app_1  |   Apply all migrations: admin, auth, contenttypes, core, sessions
+app_1  | Running migrations:
+app_1  |   Applying contenttypes.0001_initial... OK
+app_1  |   Applying contenttypes.0002_remove_content_type_name... OK
+app_1  |   Applying auth.0001_initial... OK
+app_1  |   Applying auth.0002_alter_permission_name_max_length... OK
+app_1  |   Applying auth.0003_alter_user_email_max_length... OK
+app_1  |   Applying auth.0004_alter_user_username_opts... OK
+app_1  |   Applying auth.0005_alter_user_last_login_null... OK
+app_1  |   Applying auth.0006_require_contenttypes_0002... OK
+app_1  |   Applying auth.0007_alter_validators_add_error_messages... OK
+app_1  |   Applying auth.0008_alter_user_username_max_length... OK
+app_1  |   Applying auth.0009_alter_user_last_name_max_length... OK
+app_1  |   Applying core.0001_initial... OK
+app_1  |   Applying admin.0001_initial... OK
+app_1  |   Applying admin.0002_logentry_remove_auto_add... OK
+app_1  |   Applying admin.0003_logentry_add_action_flag_choices... OK
+app_1  |   Applying sessions.0001_initial... OK
+app_1  | Performing system checks...
+app_1  | 
+app_1  | System check identified no issues (0 silenced).
+app_1  | January 07, 2020 - 02:40:08
+app_1  | Django version 2.1.15, using settings 'app.settings'
+app_1  | Starting development server at http://0.0.0.0:8000/
+app_1  | Quit the server with CONTROL-C.
+
